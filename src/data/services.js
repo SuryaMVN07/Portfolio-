@@ -20,9 +20,9 @@ export const SERVICES = [
     colorClass: 'text-indigo-500'
   },
   {
-    title: "System Architecture",
-    description: "Designing scalable backend infrastructures with optimized databases and CI/CD automation.",
-    icon: Database,
-    colorClass: 'text-indigo-500'
+    title: "Java",
+    description: "focus on practical application, code quality, and sharing your work in professional environments.",
+    icon: Java,
+    colorClass: 'text-orange-500'
   }
 ];
