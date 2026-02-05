@@ -1,5 +1,4 @@
-import { Globe, Brain, Database } from 'lucide-react';
-import { FaJava } from "react-icons/fa";
+import { Globe, Brain, Database, coffee} from 'lucide-react';
 
 export const SERVICES = [
   {
