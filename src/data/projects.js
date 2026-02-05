@@ -1,7 +1,11 @@
 import { Layers, Activity, Cpu, LineChart, Sparkles, Terminal, Search, Car, UserCheck, Database } from 'lucide-react';
 
 export const PROJECTS = [
-  { title: "Fiesto - Delivery", description: "Full-stack food ordering system with live status tracking and dynamic checkout.", tags: ["React", "Node", "Mongo"], color: "from-orange-500 to-red-500", icon: Layers },
+  { title: "Fiesto - Delivery", description: `
+    o Developed a full-stack food delivery platform enabling users to browse restaurants, place orders,and manage carts and checkouts.
+    o Implemented responsive UI and backend logic to simulate real-world food ordering and delivery workflows.  
+    o Focused on user convenience and efficient restaurant management through structured data 
+handling. `, tags: ["React", "Node", "Mongo"], color: "from-orange-500 to-red-500", icon: Layers },
   { title: "Alumni Engine", description: "Secure networking portal for CR RAO AIMSCS with JWT auth and admin panels.", tags: ["Express", "JWT", "DB"], color: "from-blue-500 to-cyan-500", icon: Activity },
   { title: "Phishing Detection", description: "High-accuracy ML classifier for URL safety auditing using Random Forest/XGBoost.", tags: ["Python", "ML", "SciKit"], color: "from-purple-500 to-pink-500", icon: Cpu },
   { title: "Stock Analysis", description: "R-based NASDAQ trend visualizer using candlestick charts and volatility metrics.", tags: ["R", "Statistics", "Plotly"], color: "from-yellow-500 to-orange-500", icon: LineChart },
