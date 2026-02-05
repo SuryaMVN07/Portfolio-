@@ -1,8 +1,8 @@
 import { Layers, Activity, Cpu, LineChart, Sparkles, Terminal, Search, Car, UserCheck, Database } from 'lucide-react';
 
 export const PROJECTS = [
-  { title: "Fiesto - Delivery", description: `Developed a full-stack food delivery platform enabling users to browse restaurants, place orders,and manage carts and checkouts.Implemented responsive UI and backend logic to simulate real-world food ordering and delivery workflows.
-  Focused on user convenience and efficient restaurant management through structured data.handling.`, tags: ["React", "Node", "Mongo","HTML", "CSS"], color: "from-orange-500 to-red-500", icon: Layers },
+  { title: "Fiesto - Delivery", description: `Developed a full-stack food delivery platform enabling users to browse restaurants, place orders,and manage carts and checkouts.Implemented responsive UI and backend logic to simulate real-world 
+  food ordering and delivery workflows.Focused on user convenience and efficient restaurant management through structured data.handling.`, tags: ["React", "Node", "Mongo","HTML", "CSS"], color: "from-orange-500 to-red-500", icon: Layers },
   
   { title: "Alumni Engine", description: `Built a secure alumni networking platform using Node.js, Express, and MongoDB with user authentication.Implemented JWT-based login, profile creation, search functionality, and event/news management. 
 Designed an admin panel for managing users and posts, strengthening backend security concepts.`, tags: ["Express", "JWT", "DB"], color: "from-blue-500 to-cyan-500", icon: Activity },
@@ -19,11 +19,15 @@ Designed an admin panel for managing users and posts, strengthening backend secu
   { title: "CI/CD Pipeline", description: `Built an end-to-end CI/CD pipeline using Docker, Jenkins, and GitHub for automated deployment.Containerized the application and automated build, test, and deployment workflows.Gained hands-on experience 
   in DevOps practices, continuous integration, and deployment automation.`, tags: ["DevOps", "Docker", "Git"], color: "from-green-500 to-emerald-500", icon: Terminal },
   
-  { title: "Job Recommendation", description: "NLP engine using TF-IDF matching for automated resume-to-job pairing.", tags: ["NLP", "Python", "ML"], color: "from-cyan-500 to-blue-500", icon: Search },
+  { title: "Job Recommendation", description: `Engineered an NLP-driven content-based job recommendation engine to align candidate resumes with suitable job roles.Utilized TF-IDF and cosine similarity algorithms to compute relevance scores 
+  between resumes and job postings.Built an interactive web application showcasing ranked recommendations and similarity metrics for enhanced usability.`, tags: ["NLP", "Python", "ML"], color: "from-cyan-500 to-blue-500", icon: Search },
   
-  { title: "Car Selling Hub", description: "Modern responsive marketplace with advanced filtering.", tags: ["JS", "UX", "Responsive"], color: "from-slate-500 to-slate-800", icon: Car },
+  { title: "Car Selling Hub", description: `Developed a premium, responsive car listing platform with modern UI and multilingual support (English/Japanese).Implemented advanced JavaScript features including filtering, pagination, image 
+    carousels, and animations.Delivered a visually rich, mobile-friendly experience using optimized styling and scalable components.`, tags: ["JS", "UX", "Responsive"], color: "from-slate-500 to-slate-800", icon: Car },
   
-  { title: "Student Matrix", description: "Java Swing management suite integrated with SQLite.", tags: ["Java", "SQL", "GUI"], color: "from-blue-600 to-indigo-700", icon: UserCheck },
+  { title: "Student Matrix", description: `Designed a desktop application to manage student records using Java Swing and JDBC.Integrated SQLite for persistent storage with proper data validation and integrity checks.Built a user-friendly 
+  GUI featuring sortable tables, live status updates, and dynamic forms. `, tags: ["Java", "SQL", "GUI"], color: "from-blue-600 to-indigo-700", icon: UserCheck },
   
-  { title: "Library DSA", description: "Trie-based search optimization for high-speed book retrieval.", tags: ["Java", "DSA", "Trie"], color: "from-red-500 to-pink-500", icon: Database }
+  { title: "Library DSA", description: `Built a library management system using Java Swing and custom data structures (Trie, Linked Lists).Implemented core features such as Add, Issue, Return, and Search Books with real-time updates.
+    Showcased strong integration of DSA concepts with full-stack Java development and GUI design.`, tags: ["Java", "DSA", "Trie"], color: "from-red-500 to-pink-500", icon: Database }
 ];
