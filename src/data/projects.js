@@ -7,16 +7,17 @@ export const PROJECTS = [
   { title: "Alumni Engine", description: `Built a secure alumni networking platform using Node.js, Express, and MongoDB with user authentication.Implemented JWT-based login, profile creation, search functionality, and event/news management. 
 Designed an admin panel for managing users and posts, strengthening backend security concepts.`, tags: ["Express", "JWT", "DB"], color: "from-blue-500 to-cyan-500", icon: Activity },
   
-  { title: "Phishing Detection", description: `o Developed a phishing detection system using Random Forest and XGBoost classifiers.\n
-o Performed data cleaning, EDA, and model training using a 70:30 train-test split achieving ~86% accuracy.\n 
-o Evaluated models using accuracy, precision, recall, and F1-score for deployment readiness.`, tags: ["Python", "ML", "SciKit"], color: "from-purple-500 to-pink-500", icon: Cpu },
+  { title: "Phishing Detection", description: `Developed a phishing detection system using Random Forest and XGBoost classifiers.Performed data cleaning, EDA, and model training using a 70:30 train-test split achieving ~86% accuracy.
+  Evaluated models using accuracy, precision, recall, and F1-score for deployment readiness.`, tags: ["Python", "ML", "SciKit"], color: "from-purple-500 to-pink-500", icon: Cpu },
   
   { title: "Stock Analysis", description: `Analyzed historical NASDAQ stock data using R and RStudio to identify trends and volatility.Visualized data using candlestick charts, heatmaps, and correlation plots with ggplot2 and plotly. 
   Derived insights on returns and market behavior through statistical and graphical analysis.`, tags: ["R", "Statistics", "Plotly"], color: "from-yellow-500 to-orange-500", icon: LineChart },
   
-  { title: "Stellama AI", description: "Intelligent chatbot with speech synthesis supporting both local and cloud inference.", tags: ["AI", "TTS", "APIs"], color: "from-indigo-500 to-purple-500", icon: Sparkles },
+  { title: "Stellama AI", description: `Developed a dual-mode AI chatbot supporting both local (Ollama) and cloud (Google Gemini) models.Implemented advanced features including real-time message editing, text-to-speech, and session persistence.
+  Designed a futuristic, responsive UI with glassmorphism effects and theme customization.`, tags: ["AI", "TTS", "APIs"], color: "from-indigo-500 to-purple-500", icon: Sparkles },
   
-  { title: "CI/CD Pipeline", description: "DevOps automation using Docker, Jenkins, and GitHub Actions.", tags: ["DevOps", "Docker", "Git"], color: "from-green-500 to-emerald-500", icon: Terminal },
+  { title: "CI/CD Pipeline", description: `Built an end-to-end CI/CD pipeline using Docker, Jenkins, and GitHub for automated deployment.Containerized the application and automated build, test, and deployment workflows.Gained hands-on experience 
+  in DevOps practices, continuous integration, and deployment automation.`, tags: ["DevOps", "Docker", "Git"], color: "from-green-500 to-emerald-500", icon: Terminal },
   
   { title: "Job Recommendation", description: "NLP engine using TF-IDF matching for automated resume-to-job pairing.", tags: ["NLP", "Python", "ML"], color: "from-cyan-500 to-blue-500", icon: Search },
   
