@@ -126,7 +126,7 @@ export default function App() {
     };
     setFavicon();
 
-    const messages = ["> ANALYZING_VIEWPORT...", "> CALIBRATING_STABLE_V54.5...", "> AUTHENTICATING_SURYA_M...", "> SYSTEMS_ONLINE."];
+    const messages = ["> INITIALIZING_SYSTEM_CORE...","> SYNCING_RESUME_DATA...","> GENERATING_IDENTITY_LOGOS...","> CLONING_PROJECT_REPOS...","> AUTHENTICATING_SURYA_M...","> SYSTEMS_ONLINE.","> SYSTEM_READY."];
     let mI = 0, cI = 0, cur = "";
     const timer = setInterval(() => {
       if (mI < messages.length) {
