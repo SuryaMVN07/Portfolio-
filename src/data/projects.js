@@ -2,9 +2,9 @@ import { Layers, Activity, Cpu, LineChart, Sparkles, Terminal, Search, Car, User
 
 export const PROJECTS = [
   { title: "Fiesto - Delivery", description: `
-    o Developed a full-stack food delivery platform enabling users to browse restaurants, place orders,and manage carts and checkouts.
-    o Implemented responsive UI and backend logic to simulate real-world food ordering and delivery workflows.  
-    o Focused on user convenience and efficient restaurant management through structured data 
+    o Developed a full-stack food delivery platform enabling users to browse restaurants, place orders,and manage carts and checkouts.\n
+    o Implemented responsive UI and backend logic to simulate real-world food ordering and delivery workflows.\n
+    o Focused on user convenience and efficient restaurant management through structured data.
 handling. `, tags: ["React", "Node", "Mongo"], color: "from-orange-500 to-red-500", icon: Layers },
   { title: "Alumni Engine", description: "Secure networking portal for CR RAO AIMSCS with JWT auth and admin panels.", tags: ["Express", "JWT", "DB"], color: "from-blue-500 to-cyan-500", icon: Activity },
   { title: "Phishing Detection", description: "High-accuracy ML classifier for URL safety auditing using Random Forest/XGBoost.", tags: ["Python", "ML", "SciKit"], color: "from-purple-500 to-pink-500", icon: Cpu },
