@@ -23,21 +23,9 @@ import Experience from './components/sections/Experience';
 import Contact from './components/sections/Contact';
 import { NAV_LINKS, WORDS } from './data/navLinks';
 
-/**
- * SURYA MALLAMPALLI - MASTER PORTFOLIO v54.5 (SOLID-DIM OVERLAY)
- * -----------------------------------------------------------------------
- * - FIX: Solid background dimming for mobile menu (No bleed-through).
- * - LOGO: Restored animated Neural Lattice logic.
- * - MOBILE: One-page grid layout for menu items.
- * - ROBOT: Aero-Neural Drone v2.0 with responsive parallax.
- * -----------------------------------------------------------------------
- */
-
-// Data constants moved to ./data and used within components/sections
-
-// ==========================================================
-// MODULE 2: REUSABLE ASSETS
-// ==========================================================
+//!@$ 
+//MODULE 2: REUSABLE ASSETS
+//!@$
 
 const MeaningfulLogo = ({ className }) => (
   <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,9 +69,9 @@ const MeaningfulLogo = ({ className }) => (
 );
 
 
-// ==========================================================
+// !@$
 // MODULE 3: MAIN APPLICATION CORE
-// ==========================================================
+// !@$
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -296,9 +284,9 @@ export default function App() {
     return () => { obs.disconnect(); window.removeEventListener('scroll', handleScroll); window.removeEventListener('resize', setS); cancelAnimationFrame(cf); };
   }, [isLoading]);
 
-  // ==========================================================
+  // !@$
   // MODULE 4: UI COMPONENTS
-  // ==========================================================
+  // !@$
 
   if (isLoading) {
     return (
@@ -306,7 +294,7 @@ export default function App() {
         <div className="w-full max-w-lg border border-white/10 p-10 bg-black/50 backdrop-blur-md rounded-2xl shadow-2xl">
           <div className="flex justify-between items-center mb-6">
             <div className="flex space-x-2"><div className="w-3 h-3 rounded-full bg-[#ff5f56]" /><div className="w-3 h-3 rounded-full bg-[#ffbd2e]" /><div className="w-3 h-3 rounded-full bg-[#27c93f]" /></div>
-            <span className="text-purple-500 text-[10px] font-black uppercase tracking-widest">BOOT_SEQUENCE_v54.5</span>
+            <span className="text-purple-500 text-[10px] font-black uppercase tracking-widest">BOOT_SEQUENCE</span>
           </div>
           <pre className="text-purple-400 text-xs sm:text-sm whitespace-pre-wrap leading-relaxed h-48 overflow-hidden font-bold">{loadingText}<span className="animate-pulse">_</span></pre>
         </div>
