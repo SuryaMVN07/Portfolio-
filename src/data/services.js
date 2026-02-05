@@ -1,4 +1,4 @@
-import { Globe, Brain, Database, coffee} from 'lucide-react';
+import { Globe, Brain, Database, Coffee} from 'lucide-react';
 
 export const SERVICES = [
   {
