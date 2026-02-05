@@ -4,8 +4,8 @@ export const PROJECTS = [
   { title: "Fiesto - Delivery", description: `Developed a full-stack food delivery platform enabling users to browse restaurants, place orders,and manage carts and checkouts.Implemented responsive UI and backend logic to simulate real-world food ordering and delivery workflows.
   Focused on user convenience and efficient restaurant management through structured data.handling.`, tags: ["React", "Node", "Mongo","HTML", "CSS"], color: "from-orange-500 to-red-500", icon: Layers },
   
-  { title: `Alumni Engine", description: "Built a secure alumni networking platform using Node.js, Express, and MongoDB with user authentication.Implemented JWT-based login, profile creation, search functionality, and event/news management. 
-Designed an admin panel for managing users and posts, strengthening backend security concepts. `, tags: ["Express", "JWT", "DB"], color: "from-blue-500 to-cyan-500", icon: Activity },
+  { title: "Alumni Engine", description: `Built a secure alumni networking platform using Node.js, Express, and MongoDB with user authentication.Implemented JWT-based login, profile creation, search functionality, and event/news management. 
+Designed an admin panel for managing users and posts, strengthening backend security concepts.`, tags: ["Express", "JWT", "DB"], color: "from-blue-500 to-cyan-500", icon: Activity },
   
   { title: "Phishing Detection", description: `Analyzed historical NASDAQ stock data using R and RStudio to identify trends and volatility.Visualized data using candlestick charts, heatmaps, and correlation plots with ggplot2 and plotly. 
   Derived insights on returns and market behavior through statistical and graphical analysis. `, tags: ["Python", "ML", "SciKit"], color: "from-purple-500 to-pink-500", icon: Cpu },
