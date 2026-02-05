@@ -18,7 +18,7 @@ export const SERVICES = [
     description: "Designing scalable backend infrastructures with optimized databases and CI/CD automation.",
     icon: Database,
     colorClass: 'text-indigo-500'
-  }
+  },
   {
     title: "System Architecture",
     description: "Designing scalable backend infrastructures with optimized databases and CI/CD automation.",
