@@ -1,4 +1,5 @@
 import { Globe, Brain, Database } from 'lucide-react';
+import { FaJava } from "react-icons/fa";
 
 export const SERVICES = [
   {
@@ -20,9 +21,9 @@ export const SERVICES = [
     colorClass: 'text-indigo-500'
   },
   {
-    title: "Java",
-    description: "focus on practical application, code quality, and sharing your work in professional environments.",
-    icon: Java,
+    title: "Java Development", 
+    description: "Focus on practical application, code quality, and sharing your work in professional environments.",
+    icon: Coffee, 
     colorClass: 'text-orange-500'
   }
 ];
