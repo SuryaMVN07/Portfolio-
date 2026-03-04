@@ -1,33 +1,92 @@
-import { Layers, Activity, Cpu, LineChart, Sparkles, Terminal, Search, Car, UserCheck, Database } from 'lucide-react';
+import { Layers, Activity, Cpu, LineChart, Sparkles, Terminal, Search, Car, UserCheck, Database, Play } from 'lucide-react';
 
 export const PROJECTS = [
-  { title: "Fiesto - Delivery", description: `Developed a full-stack food delivery platform enabling users to browse restaurants, place orders,and manage carts and checkouts.Implemented responsive UI and backend logic to simulate real-world 
-  food ordering and delivery workflows.Focused on user convenience and efficient restaurant management through structured data.handling.`, tags: ["React", "Node", "Mongo","HTML", "CSS"], color: "from-orange-500 to-red-500", icon: Layers },
-  
-  { title: "Alumni Engine", description: `Built a secure alumni networking platform using Node.js, Express, and MongoDB with user authentication.Implemented JWT-based login, profile creation, search functionality, and event/news management. 
-Designed an admin panel for managing users and posts, strengthening backend security concepts.`, tags: ["Express", "JWT", "DB"], color: "from-blue-500 to-cyan-500", icon: Activity },
-  
-  { title: "Phishing Detection", description: `Developed a phishing detection system using Random Forest and XGBoost classifiers.Performed data cleaning, EDA, and model training using a 70:30 train-test split achieving ~86% accuracy.
-  Evaluated models using accuracy, precision, recall, and F1-score for deployment readiness.`, tags: ["Python", "ML", "SciKit"], color: "from-purple-500 to-pink-500", icon: Cpu },
-  
-  { title: "Stock Analysis", description: `Analyzed historical NASDAQ stock data using R and RStudio to identify trends and volatility.Visualized data using candlestick charts, heatmaps, and correlation plots with ggplot2 and plotly. 
-  Derived insights on returns and market behavior through statistical and graphical analysis.`, tags: ["R", "Statistics", "Plotly"], color: "from-yellow-500 to-orange-500", icon: LineChart },
-  
-  { title: "Stellama AI", description: `Developed a dual-mode AI chatbot supporting both local (Ollama) and cloud (Google Gemini) models.Implemented advanced features including real-time message editing, text-to-speech, and session persistence.
-  Designed a futuristic, responsive UI with glassmorphism effects and theme customization.`, tags: ["AI", "TTS", "APIs"], color: "from-indigo-500 to-purple-500", icon: Sparkles },
-  
-  { title: "CI/CD Pipeline", description: `Built an end-to-end CI/CD pipeline using Docker, Jenkins, and GitHub for automated deployment.Containerized the application and automated build, test, and deployment workflows.Gained hands-on experience 
-  in DevOps practices, continuous integration, and deployment automation.`, tags: ["DevOps", "Docker", "Git"], color: "from-green-500 to-emerald-500", icon: Terminal },
-  
-  { title: "Job Recommendation", description: `Engineered an NLP-driven content-based job recommendation engine to align candidate resumes with suitable job roles.Utilized TF-IDF and cosine similarity algorithms to compute relevance scores 
-  between resumes and job postings.Built an interactive web application showcasing ranked recommendations and similarity metrics for enhanced usability.`, tags: ["NLP", "Python", "ML"], color: "from-cyan-500 to-blue-500", icon: Search },
-  
-  { title: "Car Selling Hub", description: `Developed a premium, responsive car listing platform with modern UI and multilingual support (English/Japanese).Implemented advanced JavaScript features including filtering, pagination, image 
-    carousels, and animations.Delivered a visually rich, mobile-friendly experience using optimized styling and scalable components.`, tags: ["JS", "UX", "Responsive"], color: "from-slate-500 to-slate-800", icon: Car },
-  
-  { title: "Student Matrix", description: `Designed a desktop application to manage student records using Java Swing and JDBC.Integrated SQLite for persistent storage with proper data validation and integrity checks.Built a user-friendly 
-  GUI featuring sortable tables, live status updates, and dynamic forms. `, tags: ["Java", "SQL", "GUI"], color: "from-blue-600 to-indigo-700", icon: UserCheck },
-  
-  { title: "Library DSA", description: `Built a library management system using Java Swing and custom data structures (Trie, Linked Lists).Implemented core features such as Add, Issue, Return, and Search Books with real-time updates.
-    Showcased strong integration of DSA concepts with full-stack Java development and GUI design.`, tags: ["Java", "DSA", "Trie"], color: "from-red-500 to-pink-500", icon: Database }
+  {
+    title: "Fiesto - Delivery",
+    description: "Developed a full-stack food delivery platform enabling users to browse restaurants, place orders, and manage carts and checkouts. Implemented responsive UI and backend logic to simulate real-world food ordering and delivery workflows. Focused on user convenience and efficient restaurant management through structured data handling.",
+    tags: ["React", "Node", "Mongo", "HTML", "CSS"],
+    color: "from-orange-500 to-red-500",
+    icon: Layers
+  },
+
+  {
+    title: "Alumni Engine",
+    description: "Built a secure alumni networking platform using Node.js, Express, and MongoDB with user authentication. Implemented JWT-based login, profile creation, search functionality, and event/news management. Designed an admin panel for managing users and posts, strengthening backend security concepts.",
+    tags: ["Express", "JWT", "DB"],
+    color: "from-blue-500 to-cyan-500",
+    icon: Activity
+  },
+
+  {
+    title: "Phishing Detection",
+    description: "Developed a phishing detection system using Random Forest and XGBoost classifiers. Performed data cleaning, EDA, and model training using a 70:30 train-test split achieving ~86% accuracy. Evaluated models using accuracy, precision, recall, and F1-score for deployment readiness.",
+    tags: ["Python", "ML", "SciKit"],
+    color: "from-purple-500 to-pink-500",
+    icon: Cpu
+  },
+
+  {
+    title: "Stock Analysis",
+    description: "Analyzed historical NASDAQ stock data using R and RStudio to identify trends and volatility. Visualized data using candlestick charts, heatmaps, and correlation plots with ggplot2 and plotly. Derived insights on returns and market behavior through statistical and graphical analysis.",
+    tags: ["R", "Statistics", "Plotly"],
+    color: "from-yellow-500 to-orange-500",
+    icon: LineChart
+  },
+
+  {
+    title: "Stellama AI",
+    description: "Developed a dual-mode AI chatbot supporting both local (Ollama) and cloud (Google Gemini) models. Implemented advanced features including real-time message editing, text-to-speech, and session persistence. Designed a futuristic, responsive UI with glassmorphism effects and theme customization.",
+    tags: ["AI", "TTS", "APIs"],
+    color: "from-indigo-500 to-purple-500",
+    icon: Sparkles
+  },
+
+  {
+    title: "CI/CD Pipeline",
+    description: "Built an end-to-end CI/CD pipeline using Docker, Jenkins, and GitHub for automated deployment. Containerized the application and automated build, test, and deployment workflows. Gained hands-on experience in DevOps practices, continuous integration, and deployment automation.",
+    tags: ["DevOps", "Docker", "Git"],
+    color: "from-green-500 to-emerald-500",
+    icon: Terminal
+  },
+
+  {
+    title: "Job Recommendation",
+    description: "Engineered an NLP-driven content-based job recommendation engine to align candidate resumes with suitable job roles. Utilized TF-IDF and cosine similarity algorithms to compute relevance scores between resumes and job postings. Built an interactive web application showcasing ranked recommendations and similarity metrics for enhanced usability.",
+    tags: ["NLP", "Python", "ML"],
+    color: "from-cyan-500 to-blue-500",
+    icon: Search
+  },
+
+  {
+    title: "Car Selling Hub",
+    description: "Developed a premium, responsive car listing platform with modern UI and multilingual support (English/Japanese). Implemented advanced JavaScript features including filtering, pagination, image carousels, and animations. Delivered a visually rich, mobile-friendly experience using optimized styling and scalable components.",
+    tags: ["JS", "UX", "Responsive"],
+    color: "from-slate-500 to-slate-800",
+    icon: Car
+  },
+
+  {
+    title: "Student Matrix",
+    description: "Designed a desktop application to manage student records using Java Swing and JDBC. Integrated SQLite for persistent storage with proper data validation and integrity checks. Built a user-friendly GUI featuring sortable tables, live status updates, and dynamic forms.",
+    tags: ["Java", "SQL", "GUI"],
+    color: "from-blue-600 to-indigo-700",
+    icon: UserCheck
+  },
+
+  {
+    title: "Library DSA",
+    description: "Built a library management system using Java Swing and custom data structures (Trie, Linked Lists). Implemented core features such as Add, Issue, Return, and Search Books with real-time updates. Showcased strong integration of DSA concepts with full-stack Java development and GUI design.",
+    tags: ["Java", "DSA", "Trie"],
+    color: "from-red-500 to-pink-500",
+    icon: Database
+  },
+
+  {
+    title: "Anime Website",
+    description: "Developed a responsive, full-stack anime streaming platform using React 19, Tailwind CSS, and Framer Motion for a premium user experience. Engineered a seamless dynamic video playback system and integrated Firebase for secure user authentication and real-time personalized watchlists.",
+    tags: ["React.js", "Tailwind", "Firebase"],
+    color: "from-blue-600 to-indigo-700",
+    icon: Play,
+    link: "https://mugiwara-stream.onrender.com/"
+  }
 ];
