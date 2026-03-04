@@ -33,46 +33,53 @@ const MeaningfulLogo = ({ className }) => (
 
 export default function Navbar({ scrolled, isMenuOpen, setIsMenuOpen, activeSection, scrollProgress, onLogoClick }) {
   return (
-    <nav className={`fixed w-full z-[150] transition-all duration-500 ${scrolled || isMenuOpen ? 'bg-black/95 backdrop-blur-3xl border-b border-white/5' : 'bg-transparent'}`}>
-      <div className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-purple-600 to-pink-500 transition-all duration-100" style={{ width: `${scrollProgress}%` }} />
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
-        <div className="group flex items-center gap-3 cursor-pointer clickable" onClick={onLogoClick}>
-          <MeaningfulLogo className="w-10 h-10 transition-all duration-700 group-hover:rotate-[360deg] group-hover:scale-110" />
-          <span className="text-lg sm:text-xl font-black bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent block tracking-tighter uppercase font-mono">Surya Mallampalli</span>
+    <>
+      <nav className={`fixed w-full top-0 z-[150] transition-all duration-500 ${scrolled || isMenuOpen ? 'bg-black/95 backdrop-blur-3xl border-b border-white/5' : 'bg-transparent'}`}>
+        <div className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-purple-600 to-pink-500 transition-all duration-100" style={{ width: `${scrollProgress}%` }} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+          <div className="group flex items-center gap-3 cursor-pointer clickable" onClick={onLogoClick}>
+            <MeaningfulLogo className="w-10 h-10 transition-all duration-700 group-hover:rotate-[360deg] group-hover:scale-110" />
+            <span className="text-lg sm:text-xl font-black bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent block tracking-tighter uppercase font-mono">Surya Mallampalli</span>
+          </div>
+          <div className="hidden lg:flex space-x-6">
+            {NAV_LINKS.map((link) => (
+              <a key={link.id} href={`#${link.id}`} className={`text-[10px] uppercase tracking-[0.2em] font-black transition-colors ${activeSection === link.id ? 'text-purple-400' : 'text-gray-400 hover:text-white'}`}>{link.name}</a>
+            ))}
+          </div>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-purple-400 p-2 relative z-[170]">
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
-        <div className="hidden lg:flex space-x-6">
-          {NAV_LINKS.map((link) => (
-            <a key={link.id} href={`#${link.id}`} className={`text-[10px] uppercase tracking-[0.2em] font-black transition-colors ${activeSection === link.id ? 'text-purple-400' : 'text-gray-400 hover:text-white'}`}>{link.name}</a>
-          ))}
-        </div>
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-purple-400 p-2 relative z-[170]">
-          {isMenuOpen ? <X size={28}/> : <Menu size={28} />}
-        </button>
-      </div>
+      </nav>
 
-      <div className={`fixed inset-0 bg-black/95 backdrop-blur-[50px] backdrop-brightness-75 backdrop-contrast-75 transition-all duration-500 lg:hidden flex flex-col z-[160] px-8 pt-24 pb-12 ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
+      <div className={`fixed inset-0 bg-black/95 backdrop-blur-3xl transition-all duration-500 lg:hidden flex flex-col z-[160] px-8 pt-24 pb-12 ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
+        <div className="absolute top-0 left-0 w-full h-20 px-4 sm:px-8 flex items-center justify-end pointer-events-none">
+          <button onClick={() => setIsMenuOpen(false)} className="text-purple-400 p-2 pointer-events-auto">
+            <X size={28} />
+          </button>
+        </div>
         <div className="flex-1 flex flex-col justify-between items-center text-center">
           <button onClick={onLogoClick} className="mb-8 flex items-center gap-3 clickable">
             <MeaningfulLogo className="w-8 h-8" />
             <span className="text-xl font-black bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent uppercase tracking-tighter font-mono">Surya Mallampalli</span>
           </button>
           {NAV_LINKS.map((link, i) => (
-            <a 
-              key={link.id} 
-              href={`#${link.id}`} 
+            <a
+              key={link.id}
+              href={`#${link.id}`}
               style={{ transitionDelay: `${i * 50}ms` }}
-              className={`text-2xl sm:text-3xl font-black uppercase tracking-tighter transition-all hover:scale-110 ${activeSection === link.id ? 'text-purple-400 scale-110' : 'text-white'}`} 
+              className={`text-2xl sm:text-3xl font-black uppercase tracking-tighter transition-all hover:scale-110 ${activeSection === link.id ? 'text-purple-400 scale-110' : 'text-white'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               {link.name}
             </a>
           ))}
           <div className="flex gap-8 mt-4">
-            <a href="https://github.com/SuryaMVN07" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors"><Github size={24}/></a>
-            <a href="https://linkedin.com/in/surya-mallampalli-b33a73383/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors"><Linkedin size={24}/></a>
+            <a href="https://github.com/SuryaMVN07" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors"><Github size={24} /></a>
+            <a href="https://linkedin.com/in/surya-mallampalli-b33a73383/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors"><Linkedin size={24} /></a>
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
