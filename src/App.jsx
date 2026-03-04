@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  Menu, X, Github, Linkedin, Mail, ExternalLink, 
-  ChevronDown, ChevronUp, Code, Rocket, Zap, Sparkles, 
-  Award, Briefcase, GraduationCap, Terminal, 
+import {
+  Menu, X, Github, Linkedin, Mail, ExternalLink,
+  ChevronDown, ChevronUp, Code, Rocket, Zap, Sparkles,
+  Award, Briefcase, GraduationCap, Terminal,
   Database, Globe, Phone, Search, Activity, Layers, Cpu,
   LineChart, Car, UserCheck, CheckCircle2, Shield, Brain
 } from 'lucide-react';
@@ -39,18 +39,18 @@ const MeaningfulLogo = ({ className }) => (
         <feComposite in="SourceGraphic" in2="blur" operator="over" />
       </filter>
     </defs>
-    <path 
-      d="M50 5 L89 27.5 V72.5 L50 95 L11 72.5 V27.5 L50 5Z" 
-      stroke="white" 
-      strokeWidth="2" 
-      strokeOpacity="0.1" 
+    <path
+      d="M50 5 L89 27.5 V72.5 L50 95 L11 72.5 V27.5 L50 5Z"
+      stroke="white"
+      strokeWidth="2"
+      strokeOpacity="0.1"
     />
-    <path 
-      d="M75 30 L40 45 L60 55 L25 70" 
-      stroke="url(#neural-path-grad)" 
-      strokeWidth="8" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
+    <path
+      d="M75 30 L40 45 L60 55 L25 70"
+      stroke="url(#neural-path-grad)"
+      strokeWidth="8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       filter="url(#core-glow)"
     />
     <circle cx="50" cy="50" r="4" fill="white" filter="url(#core-glow)">
@@ -83,13 +83,13 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [cursorVariant, setCursorVariant] = useState('default'); 
+  const [cursorVariant, setCursorVariant] = useState('default');
   const [showScrollTop, setShowScrollTop] = useState(false);
-  
-  const [robotVisuals, setRobotVisuals] = useState({ 
-    lookX: 0, lookY: 0, rotX: 0, rotY: 0, isBlinking: false, emotion: 'neutral' 
+
+  const [robotVisuals, setRobotVisuals] = useState({
+    lookX: 0, lookY: 0, rotX: 0, rotY: 0, isBlinking: false, emotion: 'neutral'
   });
-  
+
   const canvasRef = useRef(null);
   const robotRef = useRef(null);
   const cursorRef = useRef(null);
@@ -114,7 +114,7 @@ export default function App() {
     };
     setFavicon();
 
-    const messages = ["> INITIALIZING_SYSTEM_CORE...","> SYNCING_RESUME_DATA...","> GENERATING_IDENTITY_LOGOS...","> CLONING_PROJECT_REPOS...","> AUTHENTICATING_SURYA_M...","> SYSTEMS_ONLINE.","> SYSTEM_READY."];
+    const messages = ["> INITIALIZING_SYSTEM_CORE...", "> SYNCING_RESUME_DATA...", "> GENERATING_IDENTITY_LOGOS...", "> CLONING_PROJECT_REPOS...", "> AUTHENTICATING_SURYA_M...", "> SYSTEMS_ONLINE.", "> SYSTEM_READY."];
     let mI = 0, cI = 0, cur = "";
     const timer = setInterval(() => {
       if (mI < messages.length) {
@@ -190,7 +190,7 @@ export default function App() {
     if (isLoading) return;
     let frame;
     const animate = () => {
-      const l = 0.08; 
+      const l = 0.15;
       currentsRef.current.lookX += (targetsRef.current.lookX - currentsRef.current.lookX) * l;
       currentsRef.current.lookY += (targetsRef.current.lookY - currentsRef.current.lookY) * l;
       currentsRef.current.rotX += (targetsRef.current.rotX - currentsRef.current.rotX) * l;
@@ -218,9 +218,9 @@ export default function App() {
       if (robotRef.current) {
         const r = robotRef.current.getBoundingClientRect();
         const dx = cx - (r.left + r.width / 2), dy = cy - (r.top + r.height / 2);
-        targetsRef.current = { 
-          lookX: (dx/800)*15, lookY: (dy/800)*15,
-          rotY: Math.max(-30, Math.min(30, dx/12)),
+        targetsRef.current = {
+          lookX: (dx / 800) * 15, lookY: (dy / 800) * 15,
+          rotY: Math.max(-30, Math.min(30, dx / 12)),
           rotX: Math.max(-20, Math.min(20, -dy / 12))
         };
         const click = target.closest('a') || target.closest('button') || target.closest('.clickable');
@@ -244,7 +244,7 @@ export default function App() {
       setShowScrollTop(window.scrollY > 400);
       const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       setScrollProgress((window.scrollY / h) * 100);
-      
+
       const scrollPos = window.scrollY + 200;
       for (const link of NAV_LINKS) {
         const el = document.getElementById(link.id);
@@ -254,28 +254,28 @@ export default function App() {
       }
     };
     window.addEventListener('scroll', handleScroll);
-    
+
     const c = canvasRef.current; if (!c) return;
     const ctx = c.getContext('2d'); if (!ctx) return;
-    let cf; const setS = () => { if(c) { c.width = window.innerWidth; c.height = window.innerHeight; } };
+    let cf; const setS = () => { if (c) { c.width = window.innerWidth; c.height = window.innerHeight; } };
     setS();
-    const ps = Array.from({length: 80}, () => ({
-      x: Math.random()*c.width, y: Math.random()*c.height,
-      vx: (Math.random()-0.5)*0.3, vy: (Math.random()-0.5)*0.3,
-      size: Math.random()*2+0.5, op: Math.random()*0.3+0.1
+    const ps = Array.from({ length: 80 }, () => ({
+      x: Math.random() * c.width, y: Math.random() * c.height,
+      vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+      size: Math.random() * 2 + 0.5, op: Math.random() * 0.3 + 0.1
     }));
     const anim = () => {
       if (!ctx || !c) return;
-      ctx.clearRect(0,0,c.width,c.height);
+      ctx.clearRect(0, 0, c.width, c.height);
       ps.forEach(p => {
         p.x += p.vx; p.y += p.vy;
         const dx = mouseRef.current.x - p.x, dy = mouseRef.current.y - p.y;
-        const d = Math.sqrt(dx*dx+dy*dy);
-        if (d < 150) { const frc = (150-d)/150; p.x -= (dx/d)*frc*3; p.y -= (dy/d)*frc*3; }
-        if (p.x > c.width) p.x=0; if (p.x < 0) p.x=c.width;
-        if (p.y > c.height) p.y=0; if (p.y < 0) p.y=c.height;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 150) { const frc = (150 - d) / 150; p.x -= (dx / d) * frc * 3; p.y -= (dy / d) * frc * 3; }
+        if (p.x > c.width) p.x = 0; if (p.x < 0) p.x = c.width;
+        if (p.y > c.height) p.y = 0; if (p.y < 0) p.y = c.height;
         ctx.fillStyle = `rgba(168, 85, 247, ${p.op})`;
-        ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fill();
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
       });
       cf = requestAnimationFrame(anim);
     };
@@ -339,7 +339,11 @@ export default function App() {
 
       <Contact />
 
-      <footer className="py-16 border-t border-white/5 text-center text-gray-700 font-mono text-[10px] tracking-[0.5em] uppercase font-bold relative z-10 px-6 tracking-tighter">© 2026 Surya Mallampalli // NEURAL_SOLID_DIM_v54.5 // Hyderabad, IN</footer>
+      <footer className="py-16 border-t border-white/5 flex flex-col items-center justify-center gap-2 text-center text-gray-700 font-mono text-[10px] sm:text-xs tracking-widest uppercase font-bold relative z-10 px-6">
+        <span>© 2026 Surya Mallampalli</span>
+        <span className="opacity-50">// NEURAL_SOLID_DIM_v54.5 //</span>
+        <span>Hyderabad, IN</span>
+      </footer>
 
       <style>{`
         html { scroll-behavior: smooth; cursor: none; }
@@ -359,7 +363,7 @@ export default function App() {
         ::-webkit-scrollbar-track { background: #000; }
         ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #9333ea; }
-        @media (max-width: 400px) { .xs\:text-2xl { font-size: 1.5rem; line-height: 2rem; } }
+        @media (max-width: 400px) { .xs\\:text-2xl { font-size: 1.5rem; line-height: 2rem; } }
       `}</style>
     </div>
   );
