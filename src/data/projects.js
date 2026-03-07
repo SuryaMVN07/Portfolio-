@@ -6,7 +6,8 @@ export const PROJECTS = [
     description: "Developed a full-stack food delivery platform enabling users to browse restaurants, place orders, and manage carts and checkouts. Implemented responsive UI and backend logic to simulate real-world food ordering and delivery workflows. Focused on user convenience and efficient restaurant management through structured data handling.",
     tags: ["React", "Node", "Mongo", "HTML", "CSS"],
     color: "from-orange-500 to-red-500",
-    icon: Layers
+    icon: Layers,
+    link: "https://fiesto.onrender.com"
   },
 
   {
