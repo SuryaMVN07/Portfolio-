@@ -55,7 +55,8 @@ export const PROJECTS = [
     description: "Engineered an NLP-driven content-based job recommendation engine to align candidate resumes with suitable job roles. Utilized TF-IDF and cosine similarity algorithms to compute relevance scores between resumes and job postings. Built an interactive web application showcasing ranked recommendations and similarity metrics for enhanced usability.",
     tags: ["NLP", "Python", "ML"],
     color: "from-cyan-500 to-blue-500",
-    icon: Search
+    icon: Search,
+    link : "https://jobrecommender-qssk.onrender.com"
   },
 
   {
