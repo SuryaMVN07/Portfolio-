@@ -1,11 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  Menu, X, Github, Linkedin, Mail, ExternalLink,
-  ChevronDown, ChevronUp, Code, Rocket, Zap, Sparkles,
-  Award, Briefcase, GraduationCap, Terminal,
-  Database, Globe, Phone, Search, Activity, Layers, Cpu,
-  LineChart, Car, UserCheck, CheckCircle2, Shield, Brain
-} from 'lucide-react';
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -21,59 +14,15 @@ import Services from './components/sections/Services';
 import Projects from './components/sections/Projects';
 import Experience from './components/sections/Experience';
 import Contact from './components/sections/Contact';
-import { NAV_LINKS, WORDS } from './data/navLinks';
-
-//!@$ 
-//MODULE 2: REUSABLE ASSETS
-//!@$
-
-const MeaningfulLogo = ({ className }) => (
-  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="neural-path-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#A855F7" />
-        <stop offset="100%" stopColor="#EC4899" />
-      </linearGradient>
-      <filter id="core-glow">
-        <feGaussianBlur stdDeviation="2" result="blur" />
-        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-      </filter>
-    </defs>
-    <path
-      d="M50 5 L89 27.5 V72.5 L50 95 L11 72.5 V27.5 L50 5Z"
-      stroke="white"
-      strokeWidth="2"
-      strokeOpacity="0.1"
-    />
-    <path
-      d="M75 30 L40 45 L60 55 L25 70"
-      stroke="url(#neural-path-grad)"
-      strokeWidth="8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      filter="url(#core-glow)"
-    />
-    <circle cx="50" cy="50" r="4" fill="white" filter="url(#core-glow)">
-      <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
-    </circle>
-    {/* Moving data packets along the lattice */}
-    <circle r="2.5" fill="white">
-      <animateMotion path="M75 30 L40 45 L60 55 L25 70" dur="2.5s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" />
-    </circle>
-    {/* Anchor glow points */}
-    <circle cx="75" cy="30" r="3.5" fill="#A855F7" filter="url(#core-glow)" />
-    <circle cx="25" cy="70" r="3.5" fill="#EC4899" filter="url(#core-glow)" />
-  </svg>
-);
-
-
+import { NAV_LINKS } from './data/navLinks';
+import { LanguageProvider, useLang } from './context/LanguageContext';
+import { T } from './data/translations';
+import LangTransition from './components/LangTransition';
 // !@$
-// MODULE 3: MAIN APPLICATION CORE
+// MODULE 2: MAIN APPLICATION CORE
 // !@$
-
-export default function App() {
+function AppInner() {
+  const { lang } = useLang();
   const [isLoading, setIsLoading] = useState(true);
   const [loadingText, setLoadingText] = useState("");
   const [typedTitle, setTypedTitle] = useState("");
@@ -101,6 +50,33 @@ export default function App() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [isWaiting, setIsWaiting] = useState(false);
 
+  // Derived from language
+  const tCurrent = T[lang];
+  const WORDS = tCurrent.words;
+
+  // Update document title when language changes
+  useEffect(() => {
+    document.title = tCurrent.docTitle;
+  }, [lang, tCurrent.docTitle]);
+
+  // Re-observe .reveal elements so they animate in after lang switch
+  useEffect(() => {
+    if (isLoading) return;
+    const obs = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) e.target.classList.add('reveal-visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    return () => obs.disconnect();
+  }, [lang, isLoading]);
+
+  // Reset typewriter when language changes
+  useEffect(() => {
+    setTypedTitle('');
+    setWordIndex(0);
+    setIsDeleting(false);
+    setIsWaiting(false);
+  }, [lang]);
+
   // 1. BOOT SEQUENCE & TAB ICON LOGIC
   useEffect(() => {
     const setFavicon = () => {
@@ -110,11 +86,11 @@ export default function App() {
       const svgString = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='#A855F7' /><stop offset='100%' stop-color='#EC4899' /></linearGradient><path d='M75 30 L40 45 L60 55 L25 70' stroke='url(#g)' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/><circle cx='50' cy='50' r='8' fill='white'/><circle cx='75' cy='30' r='5' fill='#A855F7'/><circle cx='25' cy='70' r='5' fill='#EC4899'/></svg>`.replace(/"/g, "'").replace(/\s+/g, " ");
       link.href = `data:image/svg+xml,${encodeURIComponent(svgString)}`;
       document.head.appendChild(link);
-      document.title = "Surya Mallampalli | Portfolio";
+      // Title is set via the lang-aware effect below
     };
     setFavicon();
 
-    const messages = ["> INITIALIZING_SYSTEM_CORE...", "> SYNCING_RESUME_DATA...", "> GENERATING_IDENTITY_LOGOS...", "> CLONING_PROJECT_REPOS...", "> AUTHENTICATING_SURYA_M...", "> SYSTEMS_ONLINE.", "> SYSTEM_READY."];
+    const messages = T['en'].boot.messages;
     let mI = 0, cI = 0, cur = "";
     const timer = setInterval(() => {
       if (mI < messages.length) {
@@ -132,7 +108,7 @@ export default function App() {
   useEffect(() => {
     if (!isLoading) {
       setTimeout(() => setShowWelcome(true), 800);
-      let i = 0; const txt = "Welcome!";
+      let i = 0; const txt = tCurrent.welcome;
       const timer = setInterval(() => {
         if (i <= txt.length) setWelcomeText(txt.slice(0, i++));
         else { clearInterval(timer); setTimeout(() => setShowWelcome(false), 4000); }
@@ -303,7 +279,11 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-purple-500/30 overflow-x-hidden font-sans">
+    <div
+      className="min-h-screen bg-black text-white selection:bg-purple-500/30 overflow-x-hidden font-sans"
+    >
+      {/* Language switch animation overlay — covers everything during transition */}
+      <LangTransition />
       <Robot robotRef={robotRef} robotVisuals={robotVisuals} showWelcome={showWelcome} welcomeText={welcomeText} />
 
       <Cursor cursorRef={cursorRef} cursorVariant={cursorVariant} />
@@ -340,9 +320,9 @@ export default function App() {
       <Contact />
 
       <footer className="py-16 border-t border-white/5 flex flex-col items-center justify-center gap-2 text-center text-gray-700 font-mono text-[10px] sm:text-xs tracking-widest uppercase font-bold relative z-10 px-6">
-        <span>© 2026 Surya Mallampalli</span>
-        <span className="opacity-50">// NEURAL_SOLID_DIM_v54.5 //</span>
-        <span>Hyderabad, IN</span>
+        <span>{tCurrent.footer.rights}</span>
+        <span className="opacity-50">{tCurrent.footer.build}</span>
+        <span>{tCurrent.footer.location}</span>
       </footer>
 
       <style>{`
@@ -366,5 +346,13 @@ export default function App() {
         @media (max-width: 400px) { .xs\\:text-2xl { font-size: 1.5rem; line-height: 2rem; } }
       `}</style>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <AppInner />
+    </LanguageProvider>
   );
 }
