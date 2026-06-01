@@ -90,5 +90,13 @@ export const PROJECTS = [
     color: "from-blue-600 to-indigo-700",
     icon: Play,
     link: "https://mugiwara-stream.onrender.com/"
+  },
+
+  {
+    title: "J.A.R.V.I.S - AI Voice Assistant",
+    description: "Built a voice-controlled AI assistant integrating speech recognition, text-to-speech, and AI-powered conversational capabilities. Implemented command automation, conversation memory, and real-time interactions to emulate a virtual personal assistant.",
+    tags: ["React", "Web Speech API", "Ollama", "Gemini"],
+    color: "from-amber-400 to-orange-500",
+    icon: Mic
   }
 ];
